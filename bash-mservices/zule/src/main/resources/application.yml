@@ -1,0 +1,27 @@
+server:
+   port: 8762
+
+spring:
+   application:
+      name: zuul-server
+
+eureka:
+   instance:
+      preferIpAddress: true
+      leaseRenewalIntervalInSeconds: 120
+      leaseExpirationDurationInSeconds: 125
+   client:
+      registerWithEureka: true
+      fetchRegistry: true
+   serviceurl:
+      fetchRegistry: true
+      defaultzone: http://localhost:8761/eureka/
+
+management:
+   endpoint:
+      routes:
+         enabled: true
+   endpoints:
+      web:
+         exposure:
+            include: "*"

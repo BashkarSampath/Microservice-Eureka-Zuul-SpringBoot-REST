@@ -1,0 +1,18 @@
+server:
+   port: 9003
+   
+spring:
+   application:
+      name: rest-server-1
+
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka
+   instance:
+      preferIpAddress: true
+      leaseRenewalIntervalInSeconds: 60
+      leaseExpirationDurationInSeconds: 65
+
+app:
+   id: ${random.uuid}
